@@ -92,8 +92,8 @@ struct ARViewContainer: UIViewRepresentable {
   
   func makeUIView(context: Context) -> ARView {
     
-    let arView = ARView(frame: .zero)
-//    let arView = CustomARView(frame: .zero)
+//    let arView = ARView(frame: .zero)
+    let arView = CustomARView(frame: .zero)
     
     //config for arkit
     let config = ARWorldTrackingConfiguration()
@@ -132,8 +132,8 @@ struct ARViewContainer: UIViewRepresentable {
       if let modelEntity = model.modelEntity {
         print("DEBUG: adding model to scene - \(model.modelName)")
         
-//        let anchorEntity = AnchorEntity(plane: .any)
-        let anchorEntity = AnchorEntity()
+        let anchorEntity = AnchorEntity(plane: .any)
+//        let anchorEntity = AnchorEntity()
 //        anchorEntity.addChild(modelEntity)
         //to solve bug to add the same model more than one
         anchorEntity.addChild(modelEntity.clone(recursive: true))

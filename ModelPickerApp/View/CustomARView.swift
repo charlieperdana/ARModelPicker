@@ -69,12 +69,12 @@ class CustomARView: ARView {
   }
 }
 
-//extension CustomARView: FocusEntityDelegate {
-//  func toTrackingState() {
-//    print("tracking")
-//  }
-//  func toInitializingState() {
-//    print("initializing")
-//  }
-//}
+extension CustomARView: FocusEntityDelegate {
+  func toTrackingState() {
+    print("tracking")
+  }
+  func toInitializingState() {
+    print("initializing")
+  }
+}
 
