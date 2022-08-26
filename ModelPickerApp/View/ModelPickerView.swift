@@ -1,10 +1,3 @@
-//
-//  ModelPickerView.swift
-//  ModelPickerApp
-//
-//  Created by Quipper Indonesia on 03/06/22.
-//
-
 import SwiftUI
 
 struct ModelPickerView: View {
