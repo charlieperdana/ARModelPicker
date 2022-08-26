@@ -44,6 +44,6 @@ struct ModelPickerView_Previews: PreviewProvider {
 //  @State static var selectedModel: String?
   @State static var selectedModel: Model?
   static var previews: some View {
-    ModelPickerView(isPlacementEnabled: $isShown, selectedModel: $selectedModel, models: [Model(modelName: "")])
+    ModelPickerView(isPlacementEnabled: $isShown, selectedModel: $selectedModel, models: [Model(modelName: "", modelType: "")])
   }
 }

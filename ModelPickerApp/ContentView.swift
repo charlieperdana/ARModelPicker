@@ -54,9 +54,18 @@ struct ContentView : View {
     
     var availableModels: [Model] = []
     for filename in files where
-    filename.hasSuffix("usdz"){
-      let modelName = filename.replacingOccurrences(of: ".usdz", with: "")
-      let model = Model(modelName: modelName)
+    filename.hasSuffix("usdz") || filename.hasSuffix("reality"){
+      var modelName = ""
+      var modelType = ""
+      if filename.hasSuffix("usdz") {
+        modelName = filename.replacingOccurrences(of: ".usdz", with: "")
+        modelType = "usdz"
+      }
+      if filename.hasSuffix("reality") {
+        modelName = filename.replacingOccurrences(of: ".reality", with: "")
+        modelType = "reality"
+      }
+      let model = Model(modelName: modelName, modelType: modelType)
       availableModels.append(model)
 //      availableModels.append(modelName)
     }

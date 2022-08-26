@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2E280628B8D54000F98989 /* cosmonaut_suit.reality in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E280428B8D53800F98989 /* cosmonaut_suit.reality */; };
+		7C2E280728B8D54200F98989 /* hab.reality in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E280328B8D53800F98989 /* hab.reality */; };
+		7C2E280828B8D54500F98989 /* lunar_rover.reality in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E280528B8D53800F98989 /* lunar_rover.reality */; };
 		7C47E1452849E2A1002DF55C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47E1442849E2A1002DF55C /* AppDelegate.swift */; };
 		7C47E1472849E2A1002DF55C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47E1462849E2A1002DF55C /* ContentView.swift */; };
 		7C47E14B2849E2A2002DF55C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C47E14A2849E2A2002DF55C /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C2E280328B8D53800F98989 /* hab.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = hab.reality; sourceTree = "<group>"; };
+		7C2E280428B8D53800F98989 /* cosmonaut_suit.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = cosmonaut_suit.reality; sourceTree = "<group>"; };
+		7C2E280528B8D53800F98989 /* lunar_rover.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = lunar_rover.reality; sourceTree = "<group>"; };
 		7C47E1412849E2A1002DF55C /* ModelPickerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModelPickerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C47E1442849E2A1002DF55C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C47E1462849E2A1002DF55C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,14 +60,14 @@
 		7C47E15D2849E2A2002DF55C /* ModelPickerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelPickerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C47E1612849E2A2002DF55C /* ModelPickerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPickerAppUITests.swift; sourceTree = "<group>"; };
 		7C47E1632849E2A2002DF55C /* ModelPickerAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPickerAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7C47E1712849E798002DF55C /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = fender_stratocaster.usdz; path = ../../../../../../../Downloads/fender_stratocaster.usdz; sourceTree = "<group>"; };
-		7C47E1722849E798002DF55C /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = toy_biplane.usdz; path = ../../../../../../../Downloads/toy_biplane.usdz; sourceTree = "<group>"; };
-		7C47E1732849E798002DF55C /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = teapot.usdz; path = ../../../../../../../Downloads/teapot.usdz; sourceTree = "<group>"; };
-		7C47E1742849E798002DF55C /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = toy_robot_vintage.usdz; path = ../../../../../../../Downloads/toy_robot_vintage.usdz; sourceTree = "<group>"; };
+		7C47E1712849E798002DF55C /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
+		7C47E1722849E798002DF55C /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
+		7C47E1732849E798002DF55C /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
+		7C47E1742849E798002DF55C /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
 		7C47E17A2849F68A002DF55C /* ModelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPickerView.swift; sourceTree = "<group>"; };
 		7C47E17C284A05A0002DF55C /* PlacementButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementButtonView.swift; sourceTree = "<group>"; };
 		7C47E17E284A100E002DF55C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		7C47E180284A14AC002DF55C /* AirForce.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = AirForce.usdz; path = ../../../../../../../Downloads/AirForce.usdz; sourceTree = "<group>"; };
+		7C47E180284A14AC002DF55C /* AirForce.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = AirForce.usdz; sourceTree = "<group>"; };
 		7C47E187284A2549002DF55C /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,14 +159,18 @@
 		7C47E1702849E71C002DF55C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7C2E280428B8D53800F98989 /* cosmonaut_suit.reality */,
+				7C2E280328B8D53800F98989 /* hab.reality */,
+				7C2E280528B8D53800F98989 /* lunar_rover.reality */,
 				7C47E1712849E798002DF55C /* fender_stratocaster.usdz */,
 				7C47E1732849E798002DF55C /* teapot.usdz */,
 				7C47E1722849E798002DF55C /* toy_biplane.usdz */,
 				7C47E1742849E798002DF55C /* toy_robot_vintage.usdz */,
 				7C47E180284A14AC002DF55C /* AirForce.usdz */,
 			);
-			path = Models;
-			sourceTree = "<group>";
+			name = Models;
+			path = "/Users/quipperindonesia/Documents/Quipper/Explore/Augmented Reality/ARModelPicker/ModelPickerApp/Models";
+			sourceTree = "<absolute>";
 		};
 		7C47E1792849F675002DF55C /* View */ = {
 			isa = PBXGroup;
@@ -284,7 +294,10 @@
 			files = (
 				7C47E14E2849E2A2002DF55C /* Preview Assets.xcassets in Resources */,
 				7C47E14B2849E2A2002DF55C /* Assets.xcassets in Resources */,
+				7C2E280828B8D54500F98989 /* lunar_rover.reality in Resources */,
+				7C2E280728B8D54200F98989 /* hab.reality in Resources */,
 				7C47E1782849E798002DF55C /* toy_robot_vintage.usdz in Resources */,
+				7C2E280628B8D54000F98989 /* cosmonaut_suit.reality in Resources */,
 				7C47E1762849E798002DF55C /* toy_biplane.usdz in Resources */,
 				7C47E181284A14AC002DF55C /* AirForce.usdz in Resources */,
 				7C47E1752849E798002DF55C /* fender_stratocaster.usdz in Resources */,

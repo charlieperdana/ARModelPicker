@@ -13,15 +13,17 @@ class Model {
   var modelName: String
   var image: UIImage
   var modelEntity: ModelEntity?
+  var modelType: String
   
   private var cancellable: AnyCancellable? = nil
   
-  init(modelName: String) {
+  init(modelName: String, modelType: String) {
     self.modelName = modelName
+    self.modelType = modelType
     
     self.image = UIImage(named: modelName)!
     
-    let filename = modelName + ".usdz"
+    let filename = modelName + "." + modelType
     self.cancellable = ModelEntity.loadModelAsync(named: filename)
       .sink(receiveCompletion: { loadCompletion in
         //handle our error
