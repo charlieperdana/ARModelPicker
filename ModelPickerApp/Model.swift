@@ -10,10 +10,10 @@ import RealityKit
 import Combine
 
 class Model {
-  var modelName: String
-  var image: UIImage
-  var modelEntity: ModelEntity?
-  var modelType: String
+  private(set) var modelName: String
+  private(set) var modelType: String
+  private(set) var image: UIImage
+  private(set) var modelEntity: ModelEntity?
   
   private var cancellable: AnyCancellable? = nil
   

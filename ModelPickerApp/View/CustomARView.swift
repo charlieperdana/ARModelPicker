@@ -25,14 +25,14 @@ class CustomARView: ARView {
   required init(frame frameRect: CGRect) {
     super.init(frame: frameRect)
     
-    switch self.focusStyle {
+    switch focusStyle {
     case .color:
-      self.focusEntity = FocusEntity(on: self, focus: .plane)
+      focusEntity = FocusEntity(on: self, focus: .plane)
     case .material:
       do {
         let onColor: MaterialColorParameter = try .texture(.load(named: "Add"))
         let offColor: MaterialColorParameter = try .texture(.load(named: "Open"))
-        self.focusEntity = FocusEntity(
+        focusEntity = FocusEntity(
           on: self,
           style: .colored(
             onColor: onColor, offColor: offColor,
@@ -40,12 +40,12 @@ class CustomARView: ARView {
           )
         )
       } catch {
-        self.focusEntity = FocusEntity(on: self, focus: .classic)
+        focusEntity = FocusEntity(on: self, focus: .classic)
         print("Unable to load plane textures")
         print(error.localizedDescription)
       }
     default:
-      self.focusEntity = FocusEntity(on: self, focus: .classic)
+      focusEntity = FocusEntity(on: self, focus: .classic)
     }
     
     setupARView()
@@ -55,13 +55,13 @@ class CustomARView: ARView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setupARView(){
+  func setupARView() {
     //config for arkit
     let config = ARWorldTrackingConfiguration()
     config.planeDetection = [.horizontal, .vertical]
     config.environmentTexturing = .automatic
     
-    if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+    if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
       config.sceneReconstruction = .mesh
     }
     
@@ -77,4 +77,3 @@ extension CustomARView: FocusEntityDelegate {
     print("initializing")
   }
 }
-
