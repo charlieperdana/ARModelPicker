@@ -2,24 +2,23 @@ import SwiftUI
 
 struct ModelPickerView: View {
   @Binding var isPlacementEnabled: Bool
-  @Binding var selectedModel : Model?
+  @Binding var selectedModel: Model?
 //  @Binding var selectedModel : String?
-  var models  : [Model]
+  var models: [Model]
 //  var models  : [String]
   
   var body: some View {
-    ScrollView(.horizontal, showsIndicators: false){
+    ScrollView(.horizontal, showsIndicators: false) {
       HStack(spacing: 30){
-        ForEach(0..<self.models.count){ index in
+        ForEach(0..<models.count) { index in
 //          Text(self.models[index])
-          Button(action: {
+          Button {
 //            print("DEBUG: selected model with name: \(self.models[index])")
             print("DEBUG: selected model with name: \(self.models[index].modelName)")
           
             self.selectedModel = self.models[index]
             self.isPlacementEnabled = true
-            
-          }){
+          } label: {
 //            Image(uiImage: (UIImage(named: self.models[index]) ?? UIImage(systemName: "square.and.arrow.up.circle.fill"))!)
             Image(uiImage: self.models[index].image)
               .resizable()
@@ -29,8 +28,6 @@ struct ModelPickerView: View {
               .cornerRadius(22)
           }
           //            .buttonStyle(PlainListStyle())
-          
-          
         }
       }
     }

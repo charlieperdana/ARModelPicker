@@ -11,7 +11,6 @@ import Foundation
 import ARKit
 import FocusEntity
 
-
 struct ContentView : View {
   //  private var models : [String] = ["fender_statocaster",
   //                           "teapot",
@@ -40,21 +39,22 @@ struct ContentView : View {
 //  @State private var selectedModel : String?
 //  @State private var modelConfirmForPlacement: String?
   //ganti jadi pakai Model
-  @State private var selectedModel : Model?
+  @State private var selectedModel: Model?
   @State private var modelConfirmForPlacement: Model?
   
-  private var models : [Model] = {
+  private var models: [Model] = {
     //dynamically get our model filenames
     let filemanager = FileManager.default
     
-    guard let path = Bundle.main.resourcePath, let files = try? filemanager.contentsOfDirectory(atPath: path)
-    else {
-      return []
-    }
+    guard
+      let path = Bundle.main.resourcePath,
+      let files = try? filemanager.contentsOfDirectory(atPath: path)
+    else { return [] }
     
     var availableModels: [Model] = []
+    
     for filename in files where
-    filename.hasSuffix("usdz") || filename.hasSuffix("reality"){
+    filename.hasSuffix("usdz") || filename.hasSuffix("reality") {
       var modelName = ""
       var modelType = ""
       if filename.hasSuffix("usdz") {
@@ -77,15 +77,18 @@ struct ContentView : View {
       ARViewContainer(modelConfirmForPlacement: $modelConfirmForPlacement)
       
       if self.isPlacementEnabled {
-        PlacementButtonView(isPlacementEnable: self.$isPlacementEnabled, selectedmodel: $selectedModel, modelConfirmForPlacement: self.$modelConfirmForPlacement)
+        PlacementButtonView(
+          isPlacementEnable: $isPlacementEnabled,
+          selectedmodel: $selectedModel,
+          modelConfirmForPlacement: $modelConfirmForPlacement
+        )
       } else {
-        ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, models: self.models)
+        ModelPickerView(
+          isPlacementEnabled: $isPlacementEnabled,
+          selectedModel: $selectedModel,
+          models: models
+        )
       }
-      
-      
-      
-      
-      
     }
   }
 }
@@ -97,7 +100,7 @@ struct ContentView : View {
 
 struct ARViewContainer: UIViewRepresentable {
 //  @Binding var modelConfirmForPlacement : String?
-  @Binding var modelConfirmForPlacement : Model?
+  @Binding var modelConfirmForPlacement: Model?
   
   func makeUIView(context: Context) -> ARView {
     
@@ -109,14 +112,13 @@ struct ARViewContainer: UIViewRepresentable {
     config.planeDetection = [.horizontal, .vertical]
     config.environmentTexturing = .automatic
     
-    if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+    if ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh) {
       config.sceneReconstruction = .mesh
     }
     
     arView.session.run(config)
     
     return arView
-    
   }
   
   func updateUIView(_ uiView: ARView, context: Context) {
@@ -137,7 +139,7 @@ struct ARViewContainer: UIViewRepresentable {
 //      }  
 //    }
     
-    if let model = self.modelConfirmForPlacement{
+    if let model = self.modelConfirmForPlacement {
       if let modelEntity = model.modelEntity {
         print("DEBUG: adding model to scene - \(model.modelName)")
         
@@ -155,13 +157,9 @@ struct ARViewContainer: UIViewRepresentable {
       DispatchQueue.main.async {
         self.modelConfirmForPlacement = nil
       }
-      
     }
   }
-  
 }
-
-
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {

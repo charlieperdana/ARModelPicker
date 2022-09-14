@@ -8,49 +8,46 @@
 import SwiftUI
 
 struct PlacementButtonView: View {
-  @Binding var isPlacementEnable : Bool
+  @Binding var isPlacementEnable: Bool
   @Binding var selectedmodel: Model?
   @Binding var modelConfirmForPlacement: Model?
 //  @Binding var selectedmodel: String?
 //  @Binding var modelConfirmForPlacement: String?
   
   var body: some View {
-    HStack{
+    HStack {
       //Cancel Button
       Button {
         print("DEBUG: model placement cancel.")
-        
-        self.reserPlacementParameters()
+        reserPlacementParameters()
       } label: {
-        Image(systemName: "xmark")
-          .frame(width:60, height: 60)
-          .font(.title)
-          .background(Color.white.opacity(0.75))
-          .cornerRadius(30)
-          .padding(20)
+        buttonImage(systemName: "xmark")
       }
       
       //Confirm Button
       Button {
         print("DEBUG: model placement confirmed.")
-        
-        self.modelConfirmForPlacement  = self.selectedmodel
-        
-        self.reserPlacementParameters()
+        modelConfirmForPlacement  = selectedmodel
+        reserPlacementParameters()
       } label: {
-        Image(systemName: "checkmark")
-          .frame(width:60, height: 60)
-          .font(.title)
-          .background(Color.white.opacity(0.75))
-          .cornerRadius(30)
-          .padding(20)
+        buttonImage(systemName: "checkmark")
       }
     }
   }
+
+  @ViewBuilder
+  private func buttonImage(systemName: String) -> some View {
+    Image(systemName: systemName)
+      .frame(width: 60, height: 60)
+      .font(.title)
+      .background(Color.white.opacity(0.75))
+      .cornerRadius(30)
+      .padding(20)
+  }
   
   func reserPlacementParameters() {
-    self.isPlacementEnable = false
-    self.selectedmodel = nil
+    isPlacementEnable = false
+    selectedmodel = nil
   }
 }
 
